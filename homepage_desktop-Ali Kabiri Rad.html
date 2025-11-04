@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Logistics - Advanced Supply Chain Solutions</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  /* Colors */
+  --primary: #0057a8;
+  --primary-dark: #00598c;
+  --secondary: #1f2937;
+  --accent: #f59e0b;
+  --light: #f9fafb;
+  --light-gray: #e5e7eb;
+  --medium-gray: #9ca3af;
+  --dark: #111827;
+  --white: #ffffff;
+  --border-color: #e5e7eb;
+
+  /* Typography */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  line-height: 1.6;
+  background-color: var(--white);
+}
+
+/* ====== Header & Navigation ====== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--dark);
+  letter-spacing: -0.5px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.cta-button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cta-button:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 87, 168, 0.3);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* ====== Hero Section ====== */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.hero-content {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--medium-gray);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  animation: slideInRight 0.8s ease-out;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: var(--transition);
+}
+
+.hero-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ====== Buttons ====== */
+.btn {
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 73, 168, 0.3);
+}
+
+.btn-secondary {
+  background: var(--light);
+  color: var(--dark);
+  border: 2px solid var(--light-gray);
+}
+
+.btn-secondary:hover {
+  background: var(--light-gray);
+  transform: translateY(-3px);
+}
+
+/* ====== Services Section ====== */
+.services {
+  background: var(--light);
+  padding: 6rem 2rem;
+  margin-top: 2rem;
+}
+
+.section-header {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1rem;
+  color: var(--medium-gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 73, 168, 0.1), rgba(245, 158, 11, 0.1));
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.service-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.service-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+.service-card p {
+  color: var(--medium-gray);
+  font-size: 0.95rem;
+}
+
+/* ====== Services Highlight ====== */
+.services-highlight {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.highlight-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.highlight-content p {
+  color: var(--medium-gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.highlight-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* ====== About Section ====== */
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.about-content h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.about-content p {
+  color: var(--medium-gray);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-item h4 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+  color: var(--medium-gray);
+  font-size: 0.95rem;
+}
+
+.team-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* ====== FAQ Section ====== */
+.faq {
+  background: var(--light);
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+}
+
+.faq h2 {
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+}
+
+.faq > p {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  color: var(--medium-gray);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--white);
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  background: var(--white);
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  background: var(--light);
+}
+
+.faq-question.active {
+  color: var(--primary);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.faq-question.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.faq-question.active + .faq-answer {
+  max-height: 500px;
+  transition: max-height 0.3s ease-in;
+}
+
+.faq-answer p {
+  padding: 0 1.5rem 1.5rem;
+  color: var(--medium-gray);
+  line-height: 1.8;
+}
+
+/* ====== Pricing Section ====== */
+.pricing {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.pricing h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.pricing > p {
+  color: var(--medium-gray);
+  margin-bottom: 3rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.pricing-card {
+  background: var(--white);
+  border: 2px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  position: relative;
+  transition: var(--transition);
+  animation: fadeInUp 0.6s ease-out;
+  text-align: left;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+.pricing-card.featured {
+  border-color: var(--primary);
+  background: linear-gradient(135deg, rgba(0, 92, 168, 0.05), rgba(245, 158, 11, 0.05));
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.pricing-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--dark);
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.price span {
+  font-size: 1rem;
+  color: var(--medium-gray);
+  font-weight: 500;
+}
+
+.features {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.features li {
+  padding: 0.75rem 0;
+  color: var(--dark);
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.features li:last-child {
+  border-bottom: none;
+}
+
+.pricing-card .btn {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* ====== Contact Section ====== */
+.contact {
+  background: var(--light);
+  padding: 4rem 2rem;
+  margin-top: 2rem;
+}
+
+.contact-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact > p {
+  text-align: center;
+  color: var(--medium-gray);
+  margin-bottom: 2rem;
+}
+
+.contact-form {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--light-gray);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: rgba(0, 168, 107, 0.02);
+}
+
+.contact-form .btn {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+}
+
+.form-message.success {
+  display: block;
+  background: rgba(0, 87, 168, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.form-message.error {
+  display: block;
+  background: rgba(255, 0, 0, 0.1);
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+
+/* ====== Footer ====== */
+.footer {
+  background: var(--secondary);
+  color: var(--white);
+  padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-section a:hover {
+  color: var(--primary);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.social-icons a:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+/* ====== Animations ====== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== Scroll Reveal Animation ====== */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition);
+}
+
+.scroll-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu.active {
+    max-height: 400px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--light-gray);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .cta-button {
+    display: none;
+  }
+
+  .navbar-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .services {
+    padding: 2rem 1rem;
+  }
+
+  .services-highlight {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+
+  .pricing-card.featured {
+    transform: scale(1);
+  }
+
+  .faq {
+    padding: 2rem 1rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .footer-content {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+  }
+
+  .btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* ====== Testimonials Section ====== */
+.testimonials {
+  background: var(--light);
+  padding: 6rem 2rem;
+}
+
+.testimonials .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.testimonials-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card p {
+  color: var(--medium-gray);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-card h4 {
+  color: var(--dark);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--primary-color);
+}
+
+
+</style>
+
+
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">Global Logistics</div>
+                
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="cta-button" id="contactBtn">Contact Us</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">The Synergy of Logistics & Precision</h1>
+                <p class="hero-subtitle">We ensure that resources are efficiently acquired, stored, and transported, reaching their destination worldwide with reliability and excellence.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary">Book Shipment</button>
+                    <button class="btn btn-secondary">Supply Chain</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images.jpg" alt="Cargo ship with containers" loading="lazy">
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="section-header">
+                <h2>Services of Our Global Logistics World Supply Chain</h2>
+                <p>The logistics of a supply chain is the coordination of the storage and shipping of goods and services, from raw materials to the customer.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="cargo-ship-icon.jpg" alt="Sea freight icon">
+                    </div>
+                    <h3>Sea Freight</h3>
+                    <p>Leaders in the freight logistics transportation</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="delivery-truck-icon.jpg" alt="Land freight icon">
+                    </div>
+                    <h3>Land Freight</h3>
+                    <p>Reliable ground delivery solutions worldwide</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="air-freight-icon.jpg" alt="Air freight icon">
+                    </div>
+                    <h3>Air Freight</h3>
+                    <p>Fast and secure international air transport</p>
+                </div>
+            </div>
+
+            <div class="services-highlight">
+                <div class="highlight-content">
+                    <h3>Managing logistics with an emphasis on on-time deliveries.</h3>
+                    <p>Our advanced tracking system ensures real-time visibility of your shipments from warehouse to doorstep, guaranteeing peace of mind and reliability.</p>
+                    <button class="btn btn-primary">Book Shipment</button>
+                </div>
+                <div class="highlight-image">
+                    <img src="logistics-management-concept.jpg" alt="Warehouse logistics">
+                </div>
+            </div>
+        </section>
+
+        <!-- Team / Stats Section -->
+        <section id="about" class="about">
+            <div class="about-content">
+                <h2>Global Logistics Enables Any Company to Expand</h2>
+                <p>Our comprehensive suite of logistics solutions provides innovative, safeguard, as well as the revolutionization of supply chains. Leverage our expertise to scale any type of logistics company.</p>
+                <button class="btn btn-primary">Learn More</button>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <h4>3000+</h4>
+                    <p>Experienced employees works</p>
+                </div>
+            </div>
+            <div class="team-image">
+                <img src="logistics-team-analysis.jpg" alt="Logistics team member">
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>The Most Frequently Questions of Logistics</h2>
+            <p>Logistics and supply chain is a massive subject that comes with a lot of operations to understand and statistics forecasting.</p>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is a global logistics tracking system?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our global logistics tracking system provides real-time visibility into your shipments across all modes of transport, allowing you to monitor packages from origin to destination.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>When can I expect to get my shipment?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Delivery times vary depending on the shipping method selected. Sea freight typically takes 2-4 weeks, land freight 5-7 days, and air freight 1-2 days. Custom timelines available upon request.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What happens if I decide to cancel my order?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Cancellations can be made up to 24 hours before shipment departure. After that, cancellation fees may apply depending on the current status of your shipment.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is a delivery automation platform?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our delivery automation platform uses advanced algorithms and AI to optimize routes, automate documentation, and ensure secure end-to-end delivery management across all our logistics networks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing">
+            <h2>Our Pricing Plans</h2>
+            <p>Choose the perfect plan for your logistics needs</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <p class="price">$299<span>/month</span></p>
+                    <ul class="features">
+                        <li>✓ Up to 100 shipments/month</li>
+                        <li>✓ Basic tracking</li>
+                        <li>✓ Email support</li>
+                        <li>✗ API access</li>
+                    </ul>
+                    <button class="btn btn-secondary">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Recommended</div>
+                    <h3>Professional</h3>
+                    <p class="price">$799<span>/month</span></p>
+                    <ul class="features">
+                        <li>✓ Unlimited shipments</li>
+                        <li>✓ Advanced tracking & analytics</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ API access</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <p class="price">Custom<span>/month</span></p>
+                    <ul class="features">
+                        <li>✓ Custom solutions</li>
+                        <li>✓ Dedicated account manager</li>
+                        <li>✓ 24/7 phone support</li>
+                        <li>✓ Custom integrations</li>
+                    </ul>
+                    <button class="btn btn-secondary">Contact Sales</button>
+                </div>
+            </div>
+        </section>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+  <div class="section-header">
+    <h2>What Our Clients Say</h2>
+    <p>Our clients trust us for reliable logistics solutions worldwide. Here’s what they have to say:</p>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <img src="055e2c70853de94d8bb9b2667074d037.jpg" alt="Sarah Johnson">
+      <p>"Global Logistics transformed our supply chain. Shipments are always on time and tracking is seamless!"</p>
+      <h4>– Sarah Johnson, CEO of FastTrack Inc.</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="1b05da23fca82090d19ef8496ee923aa.jpg" alt="Nina Lee">
+      <p>"The team’s expertise and support are unmatched. We can now manage global deliveries with confidence."</p>
+      <h4>– Michael Lee, Operations Manager at ShipRight</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="c88eb54f852ee6139888f2f015113b32.jpg" alt="Emma Davis">
+      <p>"Professional, reliable, and fast. Our air and sea shipments have never been smoother."</p>
+      <h4>– Emma Davis, Logistics Coordinator at QuickMove</h4>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact-content">
+                <h2>Get in Touch</h2>
+                <p>Have questions? Our team is ready to help you optimize your supply chain.</p>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <div class="form-message" id="formMessage"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Global Logistics</h4>
+                <p>Leading the world in innovative logistics solutions.</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="Twitter">𝕏</a>
+                    <a href="#" aria-label="Facebook">f</a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Sea Freight</a></li>
+                    <li><a href="#services">Land Freight</a></li>
+                    <li><a href="#services">Air Freight</a></li>
+                    <li><a href="#services">Warehousing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Global Logistics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+
+<script>
+
+// ====== Mobile Menu Toggle ======
+const hamburger = document.getElementById("hamburger")
+const navMenu = document.getElementById("navMenu")
+const navLinks = document.querySelectorAll(".nav-link")
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active")
+  navMenu.classList.toggle("active")
+})
+
+// Close menu when a link is clicked
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active")
+    navMenu.classList.remove("active")
+  })
+})
+
+// ====== Scroll Reveal Animation ======
+const revealElements = document.querySelectorAll(".scroll-fade")
+
+const revealOnScroll = () => {
+  revealElements.forEach((element) => {
+    const elementTop = element.getBoundingClientRect().top
+    const elementBottom = element.getBoundingClientRect().bottom
+
+    if (elementTop < window.innerHeight && elementBottom > 0) {
+      element.classList.add("visible")
+    }
+  })
+}
+
+// Initial call on page load
+window.addEventListener("load", revealOnScroll)
+window.addEventListener("scroll", revealOnScroll)
+
+// ====== FAQ Accordion ======
+const faqQuestions = document.querySelectorAll(".faq-question")
+
+faqQuestions.forEach((question) => {
+  question.addEventListener("click", () => {
+    // Close all other open FAQs
+    faqQuestions.forEach((q) => {
+      if (q !== question) {
+        q.classList.remove("active")
+      }
+    })
+
+    // Toggle current FAQ
+    question.classList.toggle("active")
+  })
+})
+
+// ====== Contact Form Handling ======
+const contactForm = document.getElementById("contactForm")
+const formMessage = document.getElementById("formMessage")
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  // Get form values
+  const name = document.getElementById("name").value.trim()
+  const email = document.getElementById("email").value.trim()
+  const message = document.getElementById("message").value.trim()
+
+  // Basic validation
+  if (!name || !email || !message) {
+    showMessage("Please fill in all fields.", "error")
+    return
+  }
+
+  if (!validateEmail(email)) {
+    showMessage("Please enter a valid email address.", "error")
+    return
+  }
+
+  // Simulate form submission (in real scenario, you'd send to a backend)
+  console.log("[v0] Form submitted:", { name, email, message })
+
+  // Show success message
+  showMessage("Thank you! We will get back to you soon.", "success")
+
+  // Reset form
+  contactForm.reset()
+
+  // Clear message after 5 seconds
+  setTimeout(() => {
+    formMessage.textContent = ""
+    formMessage.className = ""
+  }, 5000)
+})
+
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return regex.test(email)
+}
+
+function showMessage(text, type) {
+  formMessage.textContent = text
+  formMessage.className = type
+}
+
+// ====== Smooth Scroll for Navigation Links ======
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault()
+    const targetId = this.getAttribute("href")
+
+    if (targetId === "#") return
+
+    const targetElement = document.querySelector(targetId)
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  })
+})
+
+// ====== Contact Button Scroll ======
+const contactBtn = document.getElementById("contactBtn")
+contactBtn.addEventListener("click", () => {
+  const contactSection = document.getElementById("contact")
+  contactSection.scrollIntoView({ behavior: "smooth", block: "start" })
+})
+
+// ====== Intersection Observer for Scroll Animations ======
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: "0px 0px -100px 0px",
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      // Add animation classes to sections as they come into view
+      if (
+        entry.target.classList.contains("service-card") ||
+        entry.target.classList.contains("pricing-card") ||
+        entry.target.classList.contains("faq-item")
+      ) {
+        entry.target.style.animation = "fadeInUp 0.6s ease-out forwards"
+      }
+    }
+  })
+}, observerOptions)
+
+document.querySelectorAll(".service-card, .pricing-card, .faq-item").forEach((el) => {
+  observer.observe(el)
+})
+
+console.log("[v0] Global Logistics landing page loaded successfully")
+
+
+
+
+</script>
